@@ -1,0 +1,48 @@
+{
+  "ticket_id": "TKT-158764",
+  "account_id": "ACC-3600",
+  "category": "how_to",
+  "priority": "P4",
+  "route_to": "L1_support",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-4449",
+    "KB-6401"
+  ],
+  "account_signals": [
+    "Renewal on 2027-05-18 (210 days)"
+  ],
+  "customer_reply": "Hello,\n\nThank you for contacting Zycus Support. We have logged your request under reference TKT-158764 (Priority: P4). Our team has referenced our technical guidance ('How to: Delegate approvals while out of office') and is investigating the issue. We will follow up shortly with our findings and recommended next steps.",
+  "internal_note": "Triage complete. Category: how_to, Priority: P4, Route: L1_support. KB References: KB-4449, KB-2914, KB-6401. Account Risk Override: NO.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=brightfield-energy.example, account_id=ACC-3600",
+      "observation": "Resolved account to ACC-3600 (Brightfield Energy), tier=Standard"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=, module=eProcurement, query=How to delegate approvals during leave",
+      "observation": "Found 3 relevant articles: KB-4449, KB-2914, KB-6401"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-3600",
+      "observation": "Renewal in 210 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=how_to, base_priority=P4, is_at_risk=False",
+      "observation": "Final decision: how_to/P4 routed to L1_support, escalate=False, notify_tam=False"
+    }
+  ]
+}

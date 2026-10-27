@@ -1,0 +1,49 @@
+{
+  "ticket_id": "TKT-160094",
+  "account_id": "ACC-2507",
+  "category": "bug",
+  "priority": "P2",
+  "route_to": "L2_engineering",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-4795",
+    "KB-6401",
+    "KB-8328"
+  ],
+  "account_signals": [
+    "Renewal on 2027-03-19 (150 days)"
+  ],
+  "customer_reply": "Hello,\n\nThank you for contacting Zycus Support. We have logged your request under reference TKT-160094 (Priority: P2). Our team has referenced our technical guidance ('E-3310: Bid submission is rejected') and is investigating the issue. We will follow up shortly with our findings and recommended next steps.",
+  "internal_note": "Triage complete. Category: bug, Priority: P2, Route: L2_engineering. KB References: KB-4795, KB-6401, KB-8328. Account Risk Override: NO.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=frostline-telecom.example, account_id=ACC-2507",
+      "observation": "Resolved account to ACC-2507 (Frostline Telecom), tier=Enterprise"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=E-3310, module=Sourcing, query=Suppliers cannot submit bids - E-3310",
+      "observation": "Found 3 relevant articles: KB-4795, KB-6401, KB-8328"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-2507",
+      "observation": "Renewal in 150 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=bug, base_priority=P2, is_at_risk=False",
+      "observation": "Final decision: bug/P2 routed to L2_engineering, escalate=False, notify_tam=False"
+    }
+  ]
+}

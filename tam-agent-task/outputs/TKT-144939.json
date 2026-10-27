@@ -1,0 +1,49 @@
+{
+  "ticket_id": "TKT-144939",
+  "account_id": "ACC-3751",
+  "category": "bug",
+  "priority": "P2",
+  "route_to": "L2_engineering",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-3985",
+    "KB-7914",
+    "KB-9216"
+  ],
+  "account_signals": [
+    "Renewal in 45 days (2026-12-04)"
+  ],
+  "customer_reply": "Hello,\n\nThank you for contacting Zycus Support. We have logged your request under reference TKT-144939 (Priority: P2). Our team has referenced our technical guidance ('KNOWN ISSUE: Invoice OCR jobs fail with E-4102 after release 26.2.3') and is investigating the issue. We will follow up shortly with our findings and recommended next steps.",
+  "internal_note": "Triage complete. Category: bug, Priority: P2, Route: L2_engineering. KB References: KB-3985, KB-7914, KB-9216. Account Risk Override: NO.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=brightfield-manufacturing.example, account_id=ACC-3751",
+      "observation": "Resolved account to ACC-3751 (Brightfield Manufacturing), tier=Premium"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=E-4102, module=eInvoice, query=All invoices failing OCR since this morning - E-41",
+      "observation": "Found 3 relevant articles: KB-3985, KB-7914, KB-9216"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-3751",
+      "observation": "Renewal in 45 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=bug, base_priority=P2, is_at_risk=False",
+      "observation": "Final decision: bug/P2 routed to L2_engineering, escalate=False, notify_tam=False"
+    }
+  ]
+}

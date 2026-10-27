@@ -1,0 +1,52 @@
+{
+  "ticket_id": "TKT-119877",
+  "account_id": "ACC-2431",
+  "category": "how_to",
+  "priority": "P3",
+  "route_to": "L1_support",
+  "escalate": true,
+  "notify_tam": true,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-6082",
+    "KB-4449",
+    "KB-4577"
+  ],
+  "account_signals": [
+    "Renewal in 61 days (2026-12-20)",
+    "2 open executive escalation(s)",
+    "Active users declined 49.1% over last 3 months",
+    "KB-2914 Account Risk Override triggered (raise priority by 1 up to P2, escalate, notify TAM)"
+  ],
+  "customer_reply": "Hello,\n\nThank you for contacting Zycus Support. We have logged your request under reference TKT-119877 (Priority: P3). Our team has referenced our technical guidance ('Approvals appear in the approver inbox with a delay') and is investigating the issue. We will follow up shortly with our findings and recommended next steps.",
+  "internal_note": "Triage complete. Category: how_to, Priority: P3, Route: L1_support. KB References: KB-6082, KB-4449, KB-4577. Account Risk Override: YES.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=pinecrest-logistics.example, account_id=ACC-2431",
+      "observation": "Resolved account to ACC-2431 (Pinecrest Logistics), tier=Premium"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=, module=eProcurement, query=Quick question - approvals seem a bit slow",
+      "observation": "Found 3 relevant articles: KB-6082, KB-4449, KB-4577"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-2431",
+      "observation": "Renewal in 61 days, escalations=2, risk_override=True"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=how_to, base_priority=P3, is_at_risk=True",
+      "observation": "Final decision: how_to/P3 routed to L1_support, escalate=True, notify_tam=True"
+    }
+  ]
+}

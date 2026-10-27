@@ -1,0 +1,49 @@
+{
+  "ticket_id": "TKT-128253",
+  "account_id": "ACC-3737",
+  "category": "needs_info",
+  "priority": "P3",
+  "route_to": "L1_support",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": true,
+  "kb_references": [
+    "KB-2914",
+    "KB-4889",
+    "KB-6058",
+    "KB-8147"
+  ],
+  "account_signals": [
+    "Renewal on 2027-08-16 (300 days)"
+  ],
+  "customer_reply": "Thank you for contacting Zycus Support. To assist you as quickly as possible, could you please provide a few additional details: 1) Which specific module or screen were you using? 2) The exact error message or a screenshot if available, and 3) The affected user(s) or record IDs. Once received, we will immediately initiate investigation.",
+  "internal_note": "Ticket lacks critical module/symptom details. Requested clarification from customer per KB-2914 policy.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=clearwater-manufacturing.example, account_id=ACC-3737",
+      "observation": "Resolved account to ACC-3737 (Clearwater Manufacturing), tier=Standard"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=, module=, query=NOTHING WORKS",
+      "observation": "Found 3 relevant articles: KB-4889, KB-6058, KB-8147"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-3737",
+      "observation": "Renewal in 300 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=needs_info, base_priority=P3, is_at_risk=False",
+      "observation": "Final decision: needs_info/P3 routed to L1_support, escalate=False, notify_tam=False"
+    }
+  ]
+}

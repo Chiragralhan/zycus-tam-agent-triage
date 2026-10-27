@@ -1,0 +1,50 @@
+{
+  "ticket_id": "TKT-169327",
+  "account_id": "ACC-4850",
+  "category": "bug",
+  "priority": "P3",
+  "route_to": "L2_engineering",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-7072",
+    "KB-1212",
+    "KB-9755"
+  ],
+  "account_signals": [
+    "Renewal on 2027-09-05 (320 days)",
+    "Active users declined 41.7% over last 3 months"
+  ],
+  "customer_reply": "Hello,\n\nThank you for contacting Zycus Support. We have logged your request under reference TKT-169327 (Priority: P3). Our team has referenced our technical guidance ('E-5214: Supplier onboarding form returns a validation error') and is investigating the issue. We will follow up shortly with our findings and recommended next steps.",
+  "internal_note": "Triage complete. Category: bug, Priority: P3, Route: L2_engineering. KB References: KB-7072, KB-1212, KB-9755. Account Risk Override: NO.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=ironleaf-foods-europe.example, account_id=",
+      "observation": "Resolved account to ACC-4850 (Ironleaf Foods Europe), tier=Enterprise"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=E-5214, module=supplier portal, query=New supplier onboarding form error",
+      "observation": "Found 3 relevant articles: KB-7072, KB-1212, KB-9755"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-4850",
+      "observation": "Renewal in 320 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=bug, base_priority=P3, is_at_risk=False",
+      "observation": "Final decision: bug/P3 routed to L2_engineering, escalate=False, notify_tam=False"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "ticket_id": "TKT-135081",
+  "account_id": "ACC-7533",
+  "category": "security",
+  "priority": "P1",
+  "route_to": "security",
+  "escalate": true,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-6401",
+    "KB-2914"
+  ],
+  "account_signals": [
+    "Tier: Enterprise"
+  ],
+  "customer_reply": "Thank you for contacting Zycus Support. We have received your report regarding suspected unauthorized data visibility. Our Information Security and Engineering teams have been engaged immediately under high-priority escalation (KB-6401). If this is linked to an active sourcing event, we strongly advise pausing the affected event until Security confirms containment. Our Security team will provide direct updates shortly.",
+  "internal_note": "CONFIDENTIAL: Suspected data exposure reported. Routed immediately to Security team at P1 as per KB-6401.",
+  "confidence": 0.98,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=silverline-energy.example, account_id=ACC-7533",
+      "observation": "Resolved account to ACC-7533 (Silverline Energy), tier=Enterprise"
+    },
+    {
+      "step": 2,
+      "action": "consult_policy",
+      "input": "policy=KB-6401 (Suspected cross-tenant data exposure)",
+      "observation": "Report indicates cross-tenant/supplier data exposure. KB-6401 mandates immediate P1, route to Security, escalate=True."
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "ticket_id": "TKT-160067",
+  "account_id": "ACC-8892",
+  "category": "feature_request",
+  "priority": "P4",
+  "route_to": "product",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-4859",
+    "KB-4449",
+    "KB-2581"
+  ],
+  "account_signals": [
+    "Renewal on 2027-05-08 (200 days)"
+  ],
+  "customer_reply": "Hello,\n\nThank you for reaching out to Zycus Support. In accordance with system policy (KB-4859: Bulk approval limits), the bulk approval feature supports up to 200 documents per batch by design to safeguard audit trail integrity. As a workaround, please filter your PO list into batches of 200 or fewer to approve them. We have also forwarded your feedback regarding 500-batch approvals to our Product team as an enhancement request.",
+  "internal_note": "By-design batch limit (max 200 docs). Provided workaround and routed feedback to Product team per KB-4859 / KB-2914.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=copperfield-brands.example, account_id=ACC-8892",
+      "observation": "Resolved account to ACC-8892 (Copperfield Brands), tier=Enterprise"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=, module=eProcurement, query=Bug: cannot bulk approve 500 POs",
+      "observation": "Found 3 relevant articles: KB-4859, KB-4449, KB-2581"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-8892",
+      "observation": "Renewal in 200 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=feature_request, base_priority=P4, is_at_risk=False",
+      "observation": "Final decision: feature_request/P4 routed to product, escalate=False, notify_tam=False"
+    }
+  ]
+}

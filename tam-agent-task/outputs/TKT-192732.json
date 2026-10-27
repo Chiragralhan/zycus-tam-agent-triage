@@ -1,0 +1,43 @@
+{
+  "ticket_id": "TKT-192732",
+  "account_id": "ACC-6031",
+  "category": "duplicate",
+  "priority": "P3",
+  "route_to": "L1_support",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": "TKT-122022",
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-5930",
+    "KB-2982",
+    "KB-5927",
+    "KB-4594"
+  ],
+  "account_signals": [
+    "Duplicate of open ticket TKT-122022"
+  ],
+  "customer_reply": "Thank you for contacting Zycus Support. We noticed that this issue is currently being actively tracked under ticket TKT-122022. To ensure streamlined communication and resolution, we have linked this request to your original ticket. Our team will continue to provide updates through that thread.",
+  "internal_note": "Duplicate ticket. Linked to active parent ticket TKT-122022 per KB-5930 duplicate policy.",
+  "confidence": 0.95,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=riverbend-health.example, account_id=ACC-6031",
+      "observation": "Resolved account to ACC-6031 (Riverbend Health), tier=Enterprise"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=E-6105, module=analytics, query=Re: Spend dashboard still not refreshing",
+      "observation": "Found 3 relevant articles: KB-2982, KB-5927, KB-4594"
+    },
+    {
+      "step": 3,
+      "action": "check_duplicates",
+      "input": "account_id=ACC-6031, window=7_days",
+      "observation": "Found existing open/recent ticket TKT-122022 for same issue (created 2.1 days ago). KB-5930 duplicate policy applied."
+    }
+  ]
+}

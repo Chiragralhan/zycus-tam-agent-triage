@@ -1,0 +1,49 @@
+{
+  "ticket_id": "TKT-160477",
+  "account_id": "ACC-1633",
+  "category": "bug",
+  "priority": "P3",
+  "route_to": "L2_engineering",
+  "escalate": false,
+  "notify_tam": false,
+  "duplicate_of": null,
+  "needs_clarification": false,
+  "kb_references": [
+    "KB-2914",
+    "KB-1786",
+    "KB-5414",
+    "KB-9061"
+  ],
+  "account_signals": [
+    "Renewal on 2027-06-17 (240 days)"
+  ],
+  "customer_reply": "Hello,\n\nThank you for contacting Zycus Support. We have logged your request under reference TKT-160477 (Priority: P3). Our team has referenced our technical guidance ('E-2207: E-signature request is rejected') and is investigating the issue. We will follow up shortly with our findings and recommended next steps.",
+  "internal_note": "Triage complete. Category: bug, Priority: P3, Route: L2_engineering. KB References: KB-1786, KB-5414, KB-9061. Account Risk Override: NO.",
+  "confidence": 0.92,
+  "reasoning_trace": [
+    {
+      "step": 1,
+      "action": "resolve_account",
+      "input": "domain=frostline-retail-group.example, account_id=ACC-1633",
+      "observation": "Resolved account to ACC-1633 (Frostline Retail Group), tier=Standard"
+    },
+    {
+      "step": 2,
+      "action": "search_kb",
+      "input": "error_code=E-2207, module=CLM, query=E-signature request rejected",
+      "observation": "Found 3 relevant articles: KB-1786, KB-5414, KB-9061"
+    },
+    {
+      "step": 3,
+      "action": "get_account_health",
+      "input": "account_id=ACC-1633",
+      "observation": "Renewal in 240 days, escalations=0, risk_override=False"
+    },
+    {
+      "step": 4,
+      "action": "apply_kb2914_policy",
+      "input": "category=bug, base_priority=P3, is_at_risk=False",
+      "observation": "Final decision: bug/P3 routed to L2_engineering, escalate=False, notify_tam=False"
+    }
+  ]
+}
